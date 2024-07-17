@@ -1,0 +1,107 @@
+@import url("reset.css");
+
+:root {
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+
+    --color-text: rgb(225, 225, 225);
+    --color-text-secondary: rgb(80, 96, 125);
+    --color-bg: rgb(15, 15, 15);
+    --color-accent: dodgerblue;
+}
+
+html {
+    min-height: 100vh;
+    background: hsla(219, 54%, 9%, 1);
+    background: linear-gradient(
+        45deg,
+        hsla(219, 54%, 9%, 1) 0%,
+        hsla(214, 40%, 10%, 1) 33%,
+        hsla(208, 35%, 7%, 1) 66%,
+        hsla(218, 65%, 3%, 1) 100%
+    );
+    background: -moz-linear-gradient(
+        45deg,
+        hsla(219, 54%, 9%, 1) 0%,
+        hsla(214, 40%, 10%, 1) 33%,
+        hsla(208, 35%, 7%, 1) 66%,
+        hsla(218, 65%, 3%, 1) 100%
+    );
+    background: -webkit-linear-gradient(
+        45deg,
+        hsla(219, 54%, 9%, 1) 0%, 
+        hsla(214, 40%, 10%, 1) 33%, 
+        hsla(208, 35%, 7%, 1) 66%, 
+        hsla(218, 65%, 3%, 1) 100%
+    );
+}
+
+body > main {
+    max-width: 70ch;
+    margin: auto;
+    margin-top: 15ch;
+    
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, section, div, article {
+    color: var(--color-text);
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.0em; }
+h3 { font-size: 1.0em; }
+h4 { font-size: 1.0em; }
+p, li, section, div, article { font-size: 1em; }
+
+p:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.quiet_text {
+    color: var(--color-text-secondary);
+}
+
+.underline {
+    text-decoration:underline;
+}
+
+.content_split {
+    display: flex;
+    fiex-direction: column;
+    gap: 1rem;
+}
+
+.content_split > *:first-child {
+    flex: none;
+    width: 15ch;
+    max-width: 15ch;
+}
+
+.contact_list {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact_list > li > *{
+    display: inline-block;
+    margin: 0;
+}
+
+.contact_list > li >*:first-child {
+    flex: none;
+    width: 10ch;
+    max-width: 10ch;
+}
