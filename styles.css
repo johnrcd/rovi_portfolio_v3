@@ -69,6 +69,12 @@ h2, h3, h4, h5, h6, p, li, section, div, article, a {
     line-height: 1.5rem;
 }
 
+@media only screen and (max-width: 768px) {
+    h4 {
+        color: var(--color-text);
+    }
+}
+
 p, li, section, div, article, a {
     color: var(--color-text);
 }
@@ -165,6 +171,13 @@ p:not(:last-child) {
 .work_job_title {
     display: flex;
     justify-content:space-between;
+}
+
+@media only screen and (max-width: 768px) {
+    .work_job_title {
+        flex-direction: column;
+        margin-bottom: 1rem;
+    }
 }
 
 .contact_link {
