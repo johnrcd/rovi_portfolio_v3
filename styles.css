@@ -19,8 +19,7 @@
     --color-text: #C2C7C7;
     --svg-filter: invert(97%) sepia(3%) saturate(54%) hue-rotate(165deg) brightness(116%) contrast(76%);
     --color-bg: rgb(5, 7, 10);
-
-    --transition-time: 0.2s;
+    --color-bg-header: rgb(5, 7, 10);
 }
 
 html {
@@ -33,6 +32,7 @@ body > main {
     max-width: 70ch;
     margin: auto;
     margin-top: 2rem;
+    margin-bottom: 2rem;
     
     display: flex;
     flex-direction: column;
@@ -67,6 +67,7 @@ h1 {
 h2, h3, h4, h5, h6, p, li, section, div, article, a {
     color: var(--color-text-header);
     line-height: 1.5rem;
+    height: fit-content;
 }
 
 @media only screen and (max-width: 768px) {
@@ -123,6 +124,15 @@ p:not(:last-child) {
     flex: none;
     width: 15ch;
     max-width: 15ch;
+    background: var(--color-bg-header);
+}
+
+@media only screen and (max-width: 768px) {
+    .content_split > *:first-child {
+        text-transform: capitalize;
+        max-width: 100%;
+        width: 100%;
+    } 
 }
 
 .contact_list {
@@ -148,7 +158,6 @@ p:not(:last-child) {
     display: inline;
     position: relative;
     bottom: -0.125rem;
-    transition: var(--transition-time);
 }
 
 .external_link:hover + .svg_external_link {
@@ -180,11 +189,21 @@ p:not(:last-child) {
     }
 }
 
-.contact_link {
-    transition: var(--transition-time);
+@media only screen and (max-width: 768px) {
+    .start_of_link {
+        display: none;
+    }
 }
 
 .contact_link:hover {
     text-decoration: underline;
     color: var(--color-text-header);
+}
+
+.theme_link:hover {
+    color: var(--color-text-header);
+}
+
+.theme_link:hover:before {
+    content: "> ";
 }
