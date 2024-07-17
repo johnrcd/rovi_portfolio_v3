@@ -51,14 +51,25 @@ html {
 }
 
 body > main {
+    width: 100%;
     max-width: 70ch;
     margin: auto;
     margin-top: 2rem;
     
     display: flex;
     flex-direction: column;
-    /* gap: 2rem; */
     line-height: inherit;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        margin-top: 1rem;
+        margin: 1rem;
+        box-sizing: border-box;
+    }
+    body > main {
+        margin-top: 0;
+    }
 }
 
 body > main > *:not(:last-child) {
@@ -106,14 +117,20 @@ p:not(:last-child) {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    margin-top: 0.5rem !important;
 }
 
 .content_split {
     display: flex;
-    fiex-direction: column;
+    flex-direction: row;
     gap: 1rem;
 }
 
+@media only screen and (max-width: 768px) {
+    .content_split {
+        flex-direction: column;
+    } 
+}
 .content_split > *:first-child {
     flex: none;
     width: 15ch;
