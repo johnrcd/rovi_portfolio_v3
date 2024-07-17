@@ -85,3 +85,8 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+/* rovi reset stuff that i need to add */
+a {
+    text-decoration: none;    
+}

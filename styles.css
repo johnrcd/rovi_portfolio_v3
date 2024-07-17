@@ -2,7 +2,7 @@
 
 :root {
     font-family: "Open Sans", sans-serif;
-    line-height: 1.5;
+    line-height: 32px;
     font-weight: 400;
 
     font-synthesis: none;
@@ -14,10 +14,14 @@
     font-style: normal;
     font-variation-settings: "wdth" 100;
 
-    --color-text: rgb(225, 225, 225);
+    --color-text-header: rgb(240, 255, 255);
+    --color-text: rgb(195, 205, 205);
     --color-text-secondary: rgb(80, 96, 125);
     --color-bg: rgb(15, 15, 15);
+    --color-bg-label: rgb(35, 40, 60);
     --color-accent: dodgerblue;
+
+    --transition-time: 0.2s;
 }
 
 html {
@@ -49,25 +53,45 @@ html {
 body > main {
     max-width: 70ch;
     margin: auto;
-    margin-top: 15ch;
+    margin-top: 2rem;
     
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    /* gap: 2rem; */
+    line-height: inherit;
 }
 
-h1, h2, h3, h4, h5, h6, p, li, section, div, article {
+body > main > *:not(:last-child) {
+    border-bottom: 1px solid var(--color-text-secondary);
+    margin-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+body > main > *:last-child {
+    margin-top: 1rem;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, section, div, article, a {
+    color: var(--color-text-header);
+    line-height: 1.5rem;
+}
+
+p, li, section, div, article, a {
     color: var(--color-text);
 }
 
-h1 { font-size: 2em; }
+h1 { font-size: 2em; font-weight:700; }
 h2 { font-size: 1.0em; }
 h3 { font-size: 1.0em; }
 h4 { font-size: 1.0em; }
-p, li, section, div, article { font-size: 1em; }
+p, li, section, div, article, a { font-size: 1em; }
 
 p:not(:last-child) {
     margin-bottom: 1rem;
+}
+
+.text_list > li:before {
+    content: "- ";
 }
 
 .quiet_text {
@@ -76,6 +100,12 @@ p:not(:last-child) {
 
 .underline {
     text-decoration:underline;
+}
+
+.title_card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
 }
 
 .content_split {
@@ -104,4 +134,36 @@ p:not(:last-child) {
     flex: none;
     width: 10ch;
     max-width: 10ch;
+}
+
+.svg_external_link {
+    opacity: 0;
+    filter: invert(97%) sepia(3%) saturate(54%) hue-rotate(165deg) brightness(116%) contrast(76%);
+    max-height: 1rem;
+    display: inline;
+    position: relative;
+    bottom: -0.125rem;
+    transition: var(--transition-time);
+}
+
+.external_link:hover + .svg_external_link {
+    display: block;
+    opacity: 1;
+}
+
+.external_link_title {
+    display: flex;
+    flex-direction: row;
+    gap: 0.85ch;
+}
+
+.external_link_email {
+    display: flex;
+    flex-direction: row;
+    gap: 0.85ch;
+}
+
+.work_job_title {
+    display: flex;
+    justify-content:space-between;
 }
