@@ -167,3 +167,12 @@ p:not(:last-child) {
     display: flex;
     justify-content:space-between;
 }
+
+.contact_link {
+    transition: var(--transition-time);
+}
+
+.contact_link:hover {
+    text-decoration: underline;
+    color: var(--color-text-header);
+}
