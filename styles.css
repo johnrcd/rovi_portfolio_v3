@@ -14,40 +14,18 @@
     font-style: normal;
     font-variation-settings: "wdth" 100;
 
-    --color-text-header: rgb(240, 255, 255);
-    --color-text: rgb(195, 205, 205);
-    --color-text-secondary: rgb(80, 96, 125);
-    --color-bg: rgb(15, 15, 15);
-    --color-bg-label: rgb(35, 40, 60);
-    --color-accent: dodgerblue;
+    --color-text-title: #EEEEEE;
+    --color-text-header: #B9E7E9;
+    --color-text: #C2C7C7;
+    --svg-filter: invert(97%) sepia(3%) saturate(54%) hue-rotate(165deg) brightness(116%) contrast(76%);
+    --color-bg: rgb(5, 7, 10);
 
     --transition-time: 0.2s;
 }
 
 html {
     min-height: 100vh;
-    background: hsla(219, 54%, 9%, 1);
-    background: linear-gradient(
-        45deg,
-        hsla(219, 54%, 9%, 1) 0%,
-        hsla(214, 40%, 10%, 1) 33%,
-        hsla(208, 35%, 7%, 1) 66%,
-        hsla(218, 65%, 3%, 1) 100%
-    );
-    background: -moz-linear-gradient(
-        45deg,
-        hsla(219, 54%, 9%, 1) 0%,
-        hsla(214, 40%, 10%, 1) 33%,
-        hsla(208, 35%, 7%, 1) 66%,
-        hsla(218, 65%, 3%, 1) 100%
-    );
-    background: -webkit-linear-gradient(
-        45deg,
-        hsla(219, 54%, 9%, 1) 0%, 
-        hsla(214, 40%, 10%, 1) 33%, 
-        hsla(208, 35%, 7%, 1) 66%, 
-        hsla(218, 65%, 3%, 1) 100%
-    );
+    background: var(--color-bg);
 }
 
 body > main {
@@ -73,7 +51,7 @@ body > main {
 }
 
 body > main > *:not(:last-child) {
-    border-bottom: 1px solid var(--color-text-secondary);
+    border-bottom: 1px solid var(--color-text);
     margin-top: 1rem;
     padding-bottom: 1rem;
 }
@@ -82,7 +60,11 @@ body > main > *:last-child {
     margin-top: 1rem;
 }
 
-h1, h2, h3, h4, h5, h6, p, li, section, div, article, a {
+h1 {
+    color: var(--color-text-title);
+}
+
+h2, h3, h4, h5, h6, p, li, section, div, article, a {
     color: var(--color-text-header);
     line-height: 1.5rem;
 }
@@ -106,7 +88,7 @@ p:not(:last-child) {
 }
 
 .quiet_text {
-    color: var(--color-text-secondary);
+    opacity: 0.6;
 }
 
 .underline {
@@ -155,7 +137,7 @@ p:not(:last-child) {
 
 .svg_external_link {
     opacity: 0;
-    filter: invert(97%) sepia(3%) saturate(54%) hue-rotate(165deg) brightness(116%) contrast(76%);
+    filter: var(--svg-filter);
     max-height: 1rem;
     display: inline;
     position: relative;
