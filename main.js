@@ -63,16 +63,12 @@ const themes = {
 const setTheme = (theme) => {
     const themeData = themes[theme];
 
-    root.style.setProperty("transition", 0);
-
     root.style.setProperty("--color-text-title",  themeData.colorTextTitle );
     root.style.setProperty("--color-text-header", themeData.colorTextHeader);
     root.style.setProperty("--color-text",        themeData.colorText      );
     root.style.setProperty("--svg-filter",        themeData.svgFilter      );
     root.style.setProperty("--color-bg",          themeData.colorBg        );
     root.style.setProperty("--color-bg-header",   themeData.colorBgHeader  );
-
-    root.style.setProperty("transition", 0.2);
 
     localStorage.setItem("theme_on_load", theme);
 };
