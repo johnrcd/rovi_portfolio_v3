@@ -1,7 +1,9 @@
 @import url("reset.css");
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
-    font-family: "Open Sans", sans-serif;
+    font-family: "Poppins", "Open Sans", sans-serif;
     line-height: 32px;
     font-weight: 400;
 
@@ -18,8 +20,8 @@
     --color-text-header: #B9E7E9;
     --color-text: #C2C7C7;
     --svg-filter: invert(97%) sepia(3%) saturate(54%) hue-rotate(165deg) brightness(116%) contrast(76%);
-    --color-bg: rgb(5, 7, 10);
-    --color-bg-header: rgb(5, 7, 10);
+    --color-bg: linear-gradient(233deg, rgba(0,2,4,1) 0%, rgba(4,14,29,1) 25%, rgba(6,15,25,1) 50%, rgba(5,9,19,1) 75%, rgba(8,23,40,1) 100%);
+    --color-bg-header: rgba(0, 0, 0, 0);
 }
 
 html {
@@ -37,6 +39,16 @@ body > main {
     display: flex;
     flex-direction: column;
     line-height: inherit;
+
+    padding: 2rem;
+
+    /* From https://css.glass */
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(0.6px);
+    -webkit-backdrop-filter: blur(0.6px);
+    border: 1px solid rgba(255, 255, 255, 0.03);
 }
 
 @media only screen and (max-width: 768px) {
