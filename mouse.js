@@ -1,10 +1,10 @@
 const glowElement = document.getElementById("mouse_glow");
 
 addEventListener("DOMContentLoaded", (event) => {
-    addEventListener("mousemove", (event) => {handleMoustMove(event)});
+    addEventListener("mousemove", (event) => {handleMouseMove(event)});
 });
 
-const handleMoustMove = (event) => {
+const handleMouseMove = (event) => {
     const y = event.pageY;
     const x = event.pageX;
     const ref = document.getElementById("mouse_glow");

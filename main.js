@@ -1,3 +1,5 @@
+import Particles from "./particles";
+
 const root = document.querySelector(':root');
 
 const init = () => {
