@@ -38,6 +38,8 @@ const themes = {
         "colorBg"          : "linear-gradient(233deg, rgba(1,2,8,1) 0%, rgba(4,14,24,1) 11%, rgba(5,17,19,1) 33%, rgba(6,16,24,1) 48%, rgba(6,12,20,1) 67%, rgba(6,9,22,1) 87%, rgba(3,9,22,1) 100%)",
         "colorBgHeader"    : "rgba(0, 0, 0, 0)",
         "glassBg"          : "rgba(255, 255, 255, 0.02)",
+        "selectionText"    : "#000000",
+        "selectionBg"      : "rgb(122, 255, 252)",
         "particleOptions"  : {
             selector: '.background',
             color: "#1d3243",
@@ -77,6 +79,8 @@ const themes = {
         "colorBg"          : "#000",
         "colorBgHeader"    : "rgba(0, 0, 0, 0)",
         "glassBg"          : "rgba(0, 0, 0, 0.5)",
+        "selectionText"    : "#000000",
+        "selectionBg"      : "#b9e9bf",
         "particleOptions"  : {
             selector: '.background',
             maxParticles: 0,
@@ -106,6 +110,8 @@ const themes = {
         "colorBg"          : "linear-gradient(320deg, rgba(156,85,13,1) 0%, rgba(140,41,71,1) 53%, rgba(75,19,79,1) 100%)",
         "colorBgHeader"    : "rgba(0, 0, 0, 0)",
         "glassBg"          : "rgba(70, 20, 35, 0.18)",
+        "selectionText"    : "#000000",
+        "selectionBg"      : "#ffb647",
         "particleOptions"  : {
             selector: '.background',
             color: "AAAAAA",
@@ -144,6 +150,8 @@ const themes = {
         "colorBg"          : "#FFFFFF",
         "colorBgHeader"    : "#EEEEEE",
         "glassBg"          : "rgba(1, 1, 1, 0)",
+        "selectionText"    : "HighlightText",
+        "selectionBg"      : "Highlight",
         "particleOptions"  : {
             selector: '.background',
             maxParticles: 0,
@@ -176,6 +184,9 @@ const setTheme = (theme) => {
     root.style.setProperty("--svg-filter",         themeData.svgFilter       );
     root.style.setProperty("--color-bg",           themeData.colorBg         );
     root.style.setProperty("--color-bg-header",    themeData.colorBgHeader   );
+
+    root.style.setProperty("--selection-text",     themeData.selectionText   );
+    root.style.setProperty("--selection-bg",       themeData.selectionBg     );
 
     root.style.setProperty("--glass-bg",           themeData.glassBg         );
 
