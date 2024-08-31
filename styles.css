@@ -30,6 +30,31 @@
     font-variation-settings: "wdth" 100;
 }
 
+canvas {
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+::root {
+    --scrollbar-primary: rgba(1, 1, 1, 0);
+}
+::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background:  rgba(1, 1, 1, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
 html {
     min-height: 100vh;
     background: var(--color-bg);
@@ -155,6 +180,16 @@ p, li, section, div, article, a { font-size: 1em; }
 
 p:not(:last-child) {
     margin-bottom: 1rem;
+}
+
+.background {
+    position: fixed;
+    display: block; 
+    width: 100vw;
+    height: 100vh; 
+    top: 0;
+    left: 0;    
+    z-index: -10;
 }
 
 .text_list > li:before {
