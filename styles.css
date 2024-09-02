@@ -25,6 +25,7 @@
     font-family: var(--font-family);
     line-height: 32px;
     font-weight: 400;
+    word-wrap: break-word;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -91,17 +92,16 @@ body > main {
     backdrop-filter: blur(3.3px);
     -webkit-backdrop-filter: blur(3.3px);
     border: 1px solid rgba(0, 0, 0, 0.17);
-
 }
 
 @media only screen and (max-width: 768px) {
     body {
-        margin-top: 1rem;
-        margin: 1rem;
+        margin: 0rem;
         box-sizing: border-box;
     }
     body > main {
         margin-top: 0;
+        padding: 1rem;
     }
 }
 
@@ -273,8 +273,15 @@ p:not(:last-child) {
     bottom: -0.125rem;
 }
 
+.external_link {
+    /* font-weight: 700; */
+    font-style: italic;
+    text-decoration-color: var(--color-text-header);
+}
+
 .external_link:hover {
     text-decoration: underline;
+    text-decoration-color: var(--color-text-header);
 }
 
 .external_link:hover + .svg_external_link {
@@ -305,19 +312,37 @@ p:not(:last-child) {
         margin-bottom: 1rem;
     }
 }
-.start_of_link {
-    display: none;
-}
+
+.super_short_link { display: none; }
+.short_link       { display: none; }
+.long_link        { display: block; }
+
 @media only screen and (max-width: 768px) {
-    .start_of_link {
-        display: none;
-    }
+    .super_short_link { display: none; }
+    .short_link       { display: block; }
+    .long_link        { display: none; }
+}
+
+@media only screen and (max-width: 480px) {
+    .super_short_link { display: block; }
+    .short_link       { display: none; }
+    .long_link        { display: none; }
 }
 
 .contact_link:hover {
     text-decoration: underline;
     color: var(--color-text-header);
     transition: 0.3s;
+}
+
+@media only screen and (max-width: 768px) {
+    .contact_link {
+        text-decoration: underline;
+    }
+    .contact_link:hover {
+        text-decoration: none;
+        transition: 0s;
+    }
 }
 
 .theme_link:hover {
@@ -336,4 +361,12 @@ p:not(:last-child) {
     background-color: rgba(255, 255, 255, 0); /* for the 1px in the center */
     border-radius: 50%;
     box-shadow: 0.5px 1px 384px 384px rgba(255, 255, 255, 0.02);
+}
+
+.click::after {
+    content: "click";
+}
+
+@media only screen and (max-width: 480px) {
+    .click::after { content: "tap"; }
 }
