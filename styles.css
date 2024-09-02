@@ -101,7 +101,9 @@ body > main {
     }
     body > main {
         margin-top: 0;
+        margin-bottom: 0;
         padding: 1rem;
+        border-radius: 0;
     }
 }
 
@@ -361,12 +363,4 @@ p:not(:last-child) {
     background-color: rgba(255, 255, 255, 0); /* for the 1px in the center */
     border-radius: 50%;
     box-shadow: 0.5px 1px 384px 384px rgba(255, 255, 255, 0.02);
-}
-
-.click::after {
-    content: "click";
-}
-
-@media only screen and (max-width: 480px) {
-    .click::after { content: "tap"; }
 }
