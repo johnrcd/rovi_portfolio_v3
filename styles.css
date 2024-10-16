@@ -355,6 +355,25 @@ p:not(:last-child) {
     content: "> ";
 }
 
+.monochrome_image {
+    background: var(--color-header);
+    position: relative;
+    line-height: 0; /* stupid ass css quirk */
+}
+
+.monochrome_image > img {
+    filter: grayscale(1) brightness(0.9);
+    opacity: 0.8;
+    margin: 1rem 0;
+    margin-top: 0.5rem;
+}
+
+.monochrome_image > img:hover {
+    filter: none;
+    opacity: 1;
+    transition: 0.3s;
+}
+
 #mouse_glow {
     position: fixed;
     margin: 0px;
